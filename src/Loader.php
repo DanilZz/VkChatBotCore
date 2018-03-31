@@ -35,6 +35,11 @@ require_once 'utils/Logger.php';
 
 $mainFolder = dirname(__DIR__);
 
+if(!file_exists($mainFolder."/logs/")) mkdir($mainFolder."/logs/");
+if(!file_exists($mainFolder."/db/")) mkdir($mainFolder."/db/");
+if(!file_exists($mainFolder."/plugins/")) mkdir($mainFolder."/plugins/");
+if(!file_exists($mainFolder."/users/")) mkdir($mainFolder."/users/");
+
 $cache = new Config($mainFolder."/cache.json", true);
 
 $cache->set("mem",memory_get_usage());
